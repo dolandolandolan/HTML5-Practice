@@ -10,8 +10,9 @@ ctx.fillText('text', x, y);				//Writes text
 ctx.fillRect(x, y, width, height));		//Draws a filled rectangle
 ctx.clearRect(x, y, width, height);		//Clears a rectangle
 ctx.strokeRect(x, y, width, height);	//Draws an empty rectangle
-ctx.beginPath							//
-ctx.stroke()							//fills
+ctx.beginPath();						//begins path
+ctx.stroke()							//fills path
+ctx.closepath();						//closes path
 
 To use JavaScript to add to an element
 document.getElementById('elementName').innerHTML='<insert>HTML</here>'
@@ -42,7 +43,7 @@ var line = function(beginX, beginY, endX, endY) {
 	ctx.moveTo(beginX, beginY);
 	ctx.lineTo(endX, endY);
 	ctx.stroke();
-	ctx.endPath();
+	ctx.closePath();
 }
 
 	//Uses line() to draw a grid
