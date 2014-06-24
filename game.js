@@ -10,6 +10,8 @@ ctx.fillText('text', x, y);				//Writes text
 ctx.fillRect(x, y, width, height));		//Draws a filled rectangle
 ctx.clearRect(x, y, width, height);		//Clears a rectangle
 ctx.strokeRect(x, y, width, height);	//Draws an empty rectangle
+ctx.beginPath							//
+ctx.stroke()							//fills
 
 To use JavaScript to add to an element
 document.getElementById('elementName').innerHTML='<insert>HTML</here>'
@@ -23,7 +25,7 @@ drawSquareBtn.addEventListener('click', drawSquare, false)
 
 function drawSquare () {
 	ctx.fillStyle = '#000000';
-	ctx.fillRect(-25 + width.canvas/2, -25 + height.canvas/2, 50, 50);
+	ctx.fillRect(-25 + canvas.width /2, -25 + canvas.height / 2, 50, 50);
 }
 
 function clearCanvas () {
@@ -36,8 +38,11 @@ function clearCanvas () {
 var line = function(beginX, beginY, endX, endY) {
 	ctx.strokeStyle = 'rgba(0, 0, 0, 1)';
 	ctx.lineWidth = "1";
+	ctx.beginPath();
 	ctx.moveTo(beginX, beginY);
 	ctx.lineTo(endX, endY);
+	ctx.stroke();
+	ctx.endPath();
 }
 
 	//Uses line() to draw a grid
@@ -50,9 +55,6 @@ var drawGrid = function(scale) {
 	}
 
 drawGrid(5);
-
-ctx.stroke();
-ctx.stroke();
 
 
 /*
